@@ -14,16 +14,6 @@
       "name": "user.oauth.redirectUris",
       "type": "java.lang.String",
       "description": "Allowed redirect URIs."
-    },
-    {
-      "name": "user.oauth.user.username",
-      "type": "java.lang.String",
-      "description": "Consumer username."
-    },
-    {
-      "name": "user.oauth.user.password",
-      "type": "java.lang.String",
-      "description": "Consumer password."
     }
   ]
 }

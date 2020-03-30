@@ -3,16 +3,37 @@ Setup explained in a [similar connection project for IP based authentication](ht
 
 ## Sequence
 ![sequence diagram](./screenshots/sequence-diagram.png)
-note: latest seq [here]().
+note: latest seq [here](https://www.websequencediagrams.com/files/render?link=D3705RSBF0BGz0Ab6czXz3k5bnSo9Q0bMBb6VnzJRq3aw3xOmCD6wfpUVQMZM3SK).
+
+### Create Custom Social Connection
+
+```bash
+./tools/create-connection.sh -d https://ext-authz-token.herokuapp.com \
+    -c ${client_id} \
+    -x ${client_secret} \
+    -e MY_AUTH0_CLIENT_ID
+```
 
 ### Test Against Social Connection
+#### Local
 ```bash
 ./tools/authorize.sh -d http://localhost:8081/auth/oauth \
-    -H id_token=token1 \
+    -H token1 \
     -c ${client_id} \
     -u ${redirectUris} \
     -s profile \
     -R code \
+    -b firefox \
+    -o
+```
+
+#### Auth0
+```bash
+./tools/authorize.sh -t amin01@au \
+    -H token1 \
+    -c MY_AUTH0_CLIENT_ID \
+    -r ext-token \
+    -s profile \
     -b firefox \
     -o
 ```

@@ -63,7 +63,7 @@ declare -r http_basic=$(echo -n "${client_id}:${client_secret}" | openssl base64
 
 declare BODY=$(cat << EOL
 {
-  "name": "ext-ip",
+  "name": "ext-token",
   "strategy": "oauth2",
   "is_domain_connection": true,
   "options": {

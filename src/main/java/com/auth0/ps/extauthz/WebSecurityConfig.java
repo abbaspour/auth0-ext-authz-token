@@ -2,8 +2,6 @@ package com.auth0.ps.extauthz;
 
 import com.auth0.ps.extauthz.token.TokenAuthenticationFilter;
 import com.auth0.ps.extauthz.token.TokenAuthenticationProvider;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,8 +16,6 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 @Order(1)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final Logger log = LoggerFactory.getLogger(WebSecurityConfig.class);
-
     private final TokenAuthenticationProvider authenticationProvider;
 
     @Autowired
@@ -29,6 +25,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http.addFilterBefore(new TokenAuthenticationFilter(), BasicAuthenticationFilter.class)
+                .requestMatchers()
+                .antMatchers("/oauth/authorize")
+                .and()
+                .authorizeRequests()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin().permitAll();
+
+/*
         http.antMatcher("/oauth/authorize")
                 .authorizeRequests()
                 .anyRequest().permitAll()
@@ -50,6 +56,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .anyRequest().authenticated()
             .and()
             .formLogin().permitAll();
+*/
     }
 
     @Override
