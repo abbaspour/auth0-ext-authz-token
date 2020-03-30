@@ -1,0 +1,15 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /auth
+
+user:
+  oauth:
+    clientId: Phiboov8eighenai
+    clientSecret: ba2zoh0Uk6mahv6au3ahNg5xa7eiNge0
+    redirectUris: https://amin01.au.auth0.com/login/callback
+
+logging:
+    level:
+      root: INFO
+

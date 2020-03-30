@@ -1,0 +1,36 @@
+title Token Authentication
+
+
+participant User as u
+participant Application as rp
+participant Auth0 as a0
+participant Token based OAuth2 as as
+participant Token Issuer as iss
+
+u -> rp: /content
+rp -> +iss: get token
+iss --> -rp: token=tttt
+
+rp -> +a0: /authorize? { connection=token, \n response_type=id_token, login_hint=tttt }
+note left of a0
+dynamic IdP parameter
+login_hint => token query param
+end note
+
+a0 -> +as: /authorize? { response_type=code,\n redirect_uri=t.A0.com/login/callback, token=tttt }
+as -> +iss: validate { token = tttt }
+iss --> -as: ok/nokay
+as --> -a0: t.A0.com/login/callback? { code=XXXX }
+
+a0 -> +as: POST /token { code=XXX }
+as --> -a0: access_token
+
+note left of a0
+fetchUserProfile() {...}
+end note
+
+a0 -> +as: GET /userinfo [ bearer: access_token ]
+as --> -a0: { profile }
+
+a0 --> -rp: /callback# { id_token=XXX }
+rp -> u: content

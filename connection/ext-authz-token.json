@@ -1,0 +1,26 @@
+{
+  "name": "ext-token",
+  "strategy": "oauth2",
+  "is_domain_connection": true,
+  "options": {
+    "client_id": "Phiboov8eighenai",
+    "client_secret": "ba2zoh0Uk6mahv6au3ahNg5xa7eiNge0",
+    "scripts": {
+        "fetchUserProfile": "@@SCRIPT@@"
+    },
+    "authorizationURL": "https://amin0.pagekite.me/auth/oauth/authorize",
+    "tokenURL": "https://amin0.pagekite.me/auth/oauth/token",
+    "scope": "user_info",
+    "customHeaders": {
+      "authorization": "basic UGhpYm9vdjhlaWdoZW5haTpiYTJ6b2gwVWs2bWFodjZhdTNhaE5nNXhhN2VpTmdlMA=="
+    },
+    "upstream_params": {
+      "token": {
+        "alias": "login_hint"
+      }
+    }
+  },
+  "enabled_clients": [
+     "1C39ZFp1MrRkRtTY7vlxFjvJLCheoMZm"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "properties": [
+    {
+      "name": "user.oauth.clientId",
+      "type": "java.lang.String",
+      "description": "OAuth 2.0 client ID."
+    },
+    {
+      "name": "user.oauth.clientSecret",
+      "type": "java.lang.String",
+      "description": "OAuth 2.0 client secret."
+    },
+    {
+      "name": "user.oauth.redirectUris",
+      "type": "java.lang.String",
+      "description": "Allowed redirect URIs."
+    },
+    {
+      "name": "user.oauth.user.username",
+      "type": "java.lang.String",
+      "description": "Consumer username."
+    },
+    {
+      "name": "user.oauth.user.password",
+      "type": "java.lang.String",
+      "description": "Consumer password."
+    }
+  ]
+}
