@@ -3,7 +3,7 @@
         'use strict';
         console.log('fetchUserProfile with access_token: ' + access_token);
         // noinspection ES6ModulesDependencies
-        request.get('https://amin0.pagekite.me/auth/userinfo',
+        request.get('@@DOMAIN@@/auth/userinfo',
             {headers: {'authorization': 'bearer ' + access_token}},
             (err, r, b) => {
                 if (err) {

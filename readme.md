@@ -37,3 +37,12 @@ note: latest seq [here](https://www.websequencediagrams.com/files/render?link=D3
     -b firefox \
     -o
 ```
+
+#### Request Id Token
+![sequence diagram](./screenshots/cli-open.png)
+
+#### Decode Payload
+![sequence diagram](./screenshots/id_token.png)
+
+### Resources 
+- [Pass Parameters to Identity Providers](https://auth0.com/docs/connections/pass-parameters-to-idps)

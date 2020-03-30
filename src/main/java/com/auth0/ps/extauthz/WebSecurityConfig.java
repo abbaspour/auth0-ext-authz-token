@@ -33,30 +33,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().permitAll();
-
-/*
-        http.antMatcher("/oauth/authorize")
-                .authorizeRequests()
-                .anyRequest().permitAll()
-                .and()
-                .antMatcher("/oauth/token")
-                .httpBasic()
-                .and()
-                .antMatcher("/login")
-                    .addFilterBefore(new TokenAuthenticationFilter(), BasicAuthenticationFilter.class)
-                .authorizeRequests()
-                .anyRequest().authenticated()
-                .and()
-                .csrf().disable();
-
-        http.requestMatchers()
-            .antMatchers("/login", "/oauth/authorize")
-            .and()
-            .authorizeRequests()
-            .anyRequest().authenticated()
-            .and()
-            .formLogin().permitAll();
-*/
     }
 
     @Override
