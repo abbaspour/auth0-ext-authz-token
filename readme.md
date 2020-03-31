@@ -1,6 +1,11 @@
 # Token Authentication in Auth0 using External Custom Social Connection
 Setup explained in a [similar connection project for IP based authentication](https://github.com/abbaspour/auth0-ext-authz-ip).
 
+## Use-cases
+1. Time bound Pre-signed URLs 
+2. Authenticated magic deep links
+3. Legacy systems integration and SSO     
+
 ## Sequence
 ![sequence diagram](./screenshots/sequence-diagram.png)
 note: latest seq [here](https://www.websequencediagrams.com/files/render?link=D3705RSBF0BGz0Ab6czXz3k5bnSo9Q0bMBb6VnzJRq3aw3xOmCD6wfpUVQMZM3SK).
